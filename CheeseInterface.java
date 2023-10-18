@@ -1,8 +1,8 @@
 public interface CheeseInterface{
     public void add();
     public void delete();
-    public Object userInput();
-    public Object displayImage();
-    public Object get();
+    public void userInput();
+    public void displayImage();
+    public String get();
     public void insert();
 }
