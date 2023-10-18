@@ -1,0 +1,37 @@
+Cheddar
+Parmesan
+Roquefort
+Brie
+Gruyere
+Feta
+Mozzarella
+Manchego
+Gorgonzola
+Epoisses
+Swiss
+Gouda
+Muenster 
+Provolone
+Blue
+Camembert
+Havarti
+Colby-Jack
+Monterey-Jack
+Edam
+Ricotta
+Manchego
+Pepper-jack 
+Goat
+Colby 
+Stilton
+Emmentaler
+Cream cheese
+Cottage 
+Halloumi
+Provolone
+Appenzeller
+Mascarpone
+String 
+Saint-Marcellin
+American cheese
+Cantal 
