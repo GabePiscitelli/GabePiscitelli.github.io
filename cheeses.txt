@@ -25,7 +25,7 @@ Goat
 Colby 
 Stilton
 Emmentaler
-Cream cheese
+Cream 
 Cottage 
 Halloumi
 Provolone
@@ -33,5 +33,5 @@ Appenzeller
 Mascarpone
 String 
 Saint-Marcellin
-American cheese
+American
 Cantal 
