@@ -1,6 +1,6 @@
-site_name: CHEEEEEESSS
+site_name: Cheese Simulator Documentation
+nav:
+  - Home: 'index.md'
 
 theme:
   name: bootstrap386
-nav:
-  - Home: 'index.md'
