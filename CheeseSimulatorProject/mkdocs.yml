@@ -2,3 +2,5 @@ site_name: CHEEEEEESSS
 
 theme:
   name: bootstrap386
+nav:
+  - Home: 'index.md'
