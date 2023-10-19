@@ -5,22 +5,22 @@ commands (add, delete, get, insert) are the same as they would be in any other l
 cheeseList to hold both data and a count integer value. The count will be used to track how many times the word appears in the text
 chosen to be searched for words.
 */
-public class cheeseList implements CheeseInterface{
+import java.util.ArrayList;
+public class CheeseList implements CheeseInterface{
     public class Cheese{
         int count;
         int index;
         String data;
         public Cheese(String c){
             data = c;
-            index = 0;
         }
     }
     int indexVal = 0;
-    public cheeseList(){
+    ArrayList<Object> valList = new ArrayList<Object>();
+    public CheeseList(){
         Cheese newCheese = new Cheese("Cheese");
         newCheese.count = 0;
-        newCheese.index = indexVal;
-        indexVal++;
+        valList.add(newCheese);
     }
     public void delete(){
 
@@ -28,13 +28,19 @@ public class cheeseList implements CheeseInterface{
     public void userInput(){
         Cheese newCheese = new Cheese("user input");
         newCheese.count = 0;
-        newCheese.index = indexVal;
-        indexVal++;
+        valList.add(newCheese);
     }
-    public void displayImage(){
-        
+
+    public Object displayImage(){
+        return(9);
+    }
+
+    public Object displayImage(Cheese chez){
+        Cheese[] ret = new Cheese[1];
+        ret[0] = chez;
+        return(ret);
     }
     public String get(int index){
-        return("cheese");
+        return("Cheese");
     }
 }
