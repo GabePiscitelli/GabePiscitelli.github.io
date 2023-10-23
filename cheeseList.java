@@ -7,13 +7,6 @@ chosen to be searched for words.
 */
 import java.util.ArrayList;
 public class CheeseList implements CheeseInterface{
-    public class Cheese{
-        int count;
-        String data;
-        public Cheese(String c){
-            data = c;
-        }
-    }
     int indexVal = 0;
     ArrayList<Object> valList = new ArrayList<Object>();
     public CheeseList(){
@@ -29,18 +22,14 @@ public class CheeseList implements CheeseInterface{
         newCheese.count = 0;
         valList.add(newCheese);
     }
-
-    public Object displayImage(){
-        return(-1);
-    }
-
+    
     public Object displayImage(Cheese chez){
         Cheese[] ret = new Cheese[1];
         ret[0] = chez;
         return(ret);
     }
 
-    public Object value(int index){
+    public Cheese value(int index){
         return(valList.get(index));
     }
 }
