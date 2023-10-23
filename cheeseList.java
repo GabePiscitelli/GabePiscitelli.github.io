@@ -9,7 +9,6 @@ import java.util.ArrayList;
 public class CheeseList implements CheeseInterface{
     public class Cheese{
         int count;
-        int index;
         String data;
         public Cheese(String c){
             data = c;
@@ -22,8 +21,8 @@ public class CheeseList implements CheeseInterface{
         newCheese.count = 0;
         valList.add(newCheese);
     }
-    public void delete(){
-
+    public void delete(int index){
+        valList.remove(index);
     }
     public void userInput(){
         Cheese newCheese = new Cheese("user input");
@@ -32,7 +31,7 @@ public class CheeseList implements CheeseInterface{
     }
 
     public Object displayImage(){
-        return(9);
+        return(-1);
     }
 
     public Object displayImage(Cheese chez){
@@ -40,7 +39,8 @@ public class CheeseList implements CheeseInterface{
         ret[0] = chez;
         return(ret);
     }
-    public String get(int index){
-        return("Cheese");
+
+    public Object value(int index){
+        return(valList.get(index));
     }
 }
