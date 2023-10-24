@@ -23,13 +23,12 @@ public class CheeseList implements CheeseInterface{
         valList.add(newCheese);
     }
     
-    public Object displayImage(Cheese chez){
-        Cheese[] ret = new Cheese[1];
-        ret[0] = chez;
+    public String displayImage(Cheese chez){
+        String ret = chez.data;
         return(ret);
     }
 
     public Cheese value(int index){
-        return(valList.get(index));
+        return((Cheese)valList.get(index));
     }
 }
