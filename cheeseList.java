@@ -17,9 +17,15 @@ public class CheeseList implements CheeseInterface{
     public void delete(int index){
         valList.remove(index);
     }
-    public void userInput(){
-        Cheese newCheese = new Cheese("user input");
-        newCheese.count = 0;
+    public void userInput(String input){
+        for(int i=0; i<valList.size(); i++){
+            if(value(i).data==input){
+                value(i).count+=1;
+                return;
+            }
+        }
+        Cheese newCheese = new Cheese("user");
+        newCheese.count = 1;
         valList.add(newCheese);
     }
     
