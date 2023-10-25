@@ -20,7 +20,6 @@ public class CheeseList implements CheeseInterface{
     public void userInput(String input){
         for(int i=0; i<valList.size(); i++){
             if(value(i).data==input){
-                value(i).count+=1;
                 return;
             }
         }
