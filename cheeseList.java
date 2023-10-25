@@ -7,10 +7,9 @@ chosen to be searched for words.
 */
 import java.util.ArrayList;
 public class CheeseList implements CheeseInterface{
-    int indexVal = 0;
     ArrayList<Object> valList = new ArrayList<Object>();
     public CheeseList(){
-        Cheese newCheese = new Cheese("Cheese");
+        Cheese newCheese = new Cheese("cheese");
         newCheese.count = 0;
         valList.add(newCheese);
     }
