@@ -9,30 +9,37 @@ import java.util.ArrayList;
 public class CheeseList implements CheeseInterface{
     ArrayList<Object> valList = new ArrayList<Object>();
     public CheeseList(){
+        // Makes a CheeseList containing "cheese"
+        // Uses an ArrayList to hold Cheeses
         Cheese newCheese = new Cheese("cheese");
         newCheese.count = 0;
         valList.add(newCheese);
     }
     public void delete(int index){
+        // Deletes thing from list
         valList.remove(index);
     }
     public void userInput(String input){
+        // Takes a user input and adds it to list, does not allow duplicates
         for(int i=0; i<valList.size(); i++){
             if(value(i).data==input){
                 return;
             }
         }
-        Cheese newCheese = new Cheese("user");
+        Cheese newCheese = new Cheese(input);
         newCheese.count = 1;
         valList.add(newCheese);
     }
     
     public String displayImage(Cheese chez){
+        // Called when an actual cheese is inputted into the search and returns what cheese needs to be displayed
+        // Will be observed by an image displaying class
         String ret = chez.data;
         return(ret);
     }
 
     public Cheese value(int index){
+        // Returns the cheese at the given index in the ArrayList
         return((Cheese)valList.get(index));
     }
 }

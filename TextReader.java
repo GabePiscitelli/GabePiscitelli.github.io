@@ -1,33 +1,40 @@
 public class TextReader implements TextReaderInterface{
     public TextReader(){
-
+        // Need an instance of a TextReader to run code
     }
     public String takeText(){
+        // Will eventually take a user input and return it
         String textChunk = "According to all known laws of aviation, there is no way a bee should be able to fly. Its wings are too small to get its fat little body off the ground. The bee, of course, flies anyway because bees don't care what humans think is impossible. Yellow, black. Yellow, black. Yellow, black. Yellow, black. Ooh, black and yellow! Let's shake it up a little.";
         return(textChunk);
     }
     public String format(String input){
+        // Makes the input lowercase
         String ret = input;
         ret = ret.toLowerCase();
         return(ret);
     }
 
-    public int search(String word, String fInput){
-        int ret = 0;
-        String[] check = new String[word.length()];
-        int ind = 0;
+    public int search(String word, String formattedInput){
+        /* Takes a word and searches through a given text for how many times that word is spelled. 
+        For example if you give it the word "egg" and the text "enter the gray ghost's house" it will return
+        1 because it finds the first "e" then the first "g" then another "g" but there are no more times "g"
+        appears in the text.
+        */
+        int wordCount = 0;
+        String[] wordToCheck = new String[word.length()];
+        int wordIndex = 0;
         for(int i=0; i<word.length(); i++){
-            check[i] = word.substring(i,i+1);
+            wordToCheck[i] = word.substring(i,i+1);
         }
-        for(int i=0; i<fInput.length(); i++){
-            if(fInput.substring(i,i+1).equals(check[ind])){
-                if(ind == check.length-1){
-                    ret++;
-                    ind=0;
+        for(int i=0; i<formattedInput.length(); i++){
+            if(formattedInput.substring(i,i+1).equals(wordToCheck[wordIndex])){
+                if(wordIndex == wordToCheck.length-1){
+                    wordCount++;
+                    wordIndex=0;
                 }
-                ind++;
+                wordIndex++;
             }
         }
-        return(ret);
+        return(wordCount);
     }
 }
