@@ -6,7 +6,9 @@ cheeseList to hold both data and a count integer value. The count will be used t
 chosen to be searched for words.
 */
 import java.util.ArrayList;
+import java.util.Scanner;
 public class CheeseList implements CheeseInterface{
+    Scanner scn = new Scanner(System.in);
     ArrayList<Object> valList = new ArrayList<Object>();
     public CheeseList(){
         // Makes a CheeseList containing "cheese"
@@ -19,8 +21,10 @@ public class CheeseList implements CheeseInterface{
         // Deletes thing from list
         valList.remove(index);
     }
-    public void userInput(String input){
+    public void userInput(){
         // Takes a user input and adds it to list, does not allow duplicates
+        String input = scn.nextLine();
+        input = input.toLowerCase();
         for(int i=0; i<valList.size(); i++){
             if(value(i).data==input){
                 return;

@@ -1,10 +1,12 @@
+import java.util.Scanner;
 public class TextReader implements TextReaderInterface{
+    Scanner scn = new Scanner(System.in);
     public TextReader(){
         // Need an instance of a TextReader to run code
     }
     public String takeText(){
         // Will eventually take a user input and return it
-        String textChunk = "According to all known laws of aviation, there is no way a bee should be able to fly. Its wings are too small to get its fat little body off the ground. The bee, of course, flies anyway because bees don't care what humans think is impossible. Yellow, black. Yellow, black. Yellow, black. Yellow, black. Ooh, black and yellow! Let's shake it up a little.";
+        String textChunk = scn.nextLine();
         return(textChunk);
     }
     public String format(String input){
