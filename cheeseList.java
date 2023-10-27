@@ -26,7 +26,7 @@ public class CheeseList implements CheeseInterface{
         String input = scn.nextLine();
         input = input.toLowerCase();
         for(int i=0; i<valList.size(); i++){
-            if(value(i).data==input){
+            if(value(i).data.equals(input)){
                 return;
             }
         }
