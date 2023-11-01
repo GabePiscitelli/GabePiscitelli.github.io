@@ -9,7 +9,7 @@ public class Test{
         reader.format(text);
         for(int i=0; i<cheeseList.valList.size(); i++){
             System.out.println(cheeseList.value(i).data + ":" + reader.search(cheeseList.value(i).data, text));
-            //System.out.println(reader.search(cheeseList.value(i).data, text)); 
         }
+        
     }
 }
