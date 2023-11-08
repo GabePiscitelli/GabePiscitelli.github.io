@@ -4,15 +4,16 @@ public class Display{
     JPanel panel; // the panel is not visible in output
     JLabel label;
     JTextField textThing; // accepts upto 10 characters
-    JButton send;
+    static JButton send;
     JButton reset;
     JLabel t;
     JTextArea ta;
+    JFrame frame = new JFrame("Cheese Simulator.exe");
     public Display(){
 
     }
     public void makeDisp(){
-        JFrame frame = new JFrame("Cheese Simulator.exe");
+        
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(300,300);
 
@@ -33,7 +34,8 @@ public class Display{
         frame.getContentPane().add(BorderLayout.CENTER, ta);
         frame.setVisible(true);
     }
-    public void stuff(String text){
-        
+    public void sendText(){
+        t.setText(textThing.getText());
+        frame.setVisible(true);
     }
 }
