@@ -4,10 +4,10 @@ public class Display{
     JPanel panel; // the panel is not visible in output
     JLabel label;
     JTextField textThing; // accepts upto 10 characters
-    static JButton send;
+    JButton send;
     JButton reset;
-    JLabel t;
-    JTextArea ta;
+    JLabel question1;
+    JLabel question2;
     JFrame frame = new JFrame("Cheese Simulator.exe");
     public Display(){
 
@@ -15,7 +15,7 @@ public class Display{
     public void makeDisp(){
         
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(300,300);
+        frame.setSize(1000,700);
 
         panel = new JPanel(); // the panel is not visible in output
         label = new JLabel("Enter Text");
@@ -26,16 +26,16 @@ public class Display{
         panel.add(textThing);
         panel.add(send);
         panel.add(reset);
-        t = new JLabel();
-        frame.getContentPane().add(BorderLayout.NORTH, t);
-        // Text Area at the Center
-        ta = new JTextArea();
+        question1 = new JLabel("What would you like to search for?");
+        question2 = new JLabel("What would you like to search for it in?");
+        question1.setBounds(0,0,250,15);
+        frame.getContentPane().add(question1);
+        question2.setBounds(90,10,300,15);
+        frame.getContentPane().add(question2);
         frame.getContentPane().add(BorderLayout.SOUTH, panel);
-        frame.getContentPane().add(BorderLayout.CENTER, ta);
         frame.setVisible(true);
     }
     public void sendText(){
-        t.setText(textThing.getText());
-        frame.setVisible(true);
+        
     }
 }

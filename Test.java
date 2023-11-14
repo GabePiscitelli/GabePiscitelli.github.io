@@ -10,12 +10,14 @@ public class Test{
         System.out.println("What text would you like to search for it in?");
         String text = reader.takeText();
         reader.format(text);
-        //System.out.println(disp.textThing.getText());
+        
         for(int i=0; i<cheeseList.valList.size(); i++){
             System.out.println(cheeseList.value(i).data + ":" + reader.search(cheeseList.value(i).data, text));
         }
+        
         while(var == false){
-            if(Display.send.getModel().isPressed() == true){
+            System.out.print("");
+            if(disp.send.getModel().isPressed()){
                 System.out.println("chez");
                 var = true;
             }
