@@ -36,6 +36,6 @@ public class Display{
         frame.setVisible(true);
     }
     public void sendText(){
-        
+        //idk
     }
 }
