@@ -21,10 +21,9 @@ public class CheeseList implements CheeseInterface{
         // Deletes thing from list
         valList.remove(index);
     }
-    public void userInput(){
+    public void userInput(String inp){
         // Takes a user input and adds it to list, does not allow duplicates
-        String input = scn.nextLine();
-        input = input.toLowerCase();
+        String input = inp.toLowerCase();
         for(int i=0; i<valList.size(); i++){
             if(value(i).data.equals(input)){
                 return;
