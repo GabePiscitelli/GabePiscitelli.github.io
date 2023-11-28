@@ -35,7 +35,7 @@ public class Display{
        
 
         question1 = new JLabel("What would you like to search for?");
-        ans1 = new JLabel("bean");
+        ans1 = new JLabel("");
         question1.setBounds(0,0,100,50);
         ans1.setBounds(0,200,100,50);
         bigPanel.add(question1);
