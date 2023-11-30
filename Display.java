@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 public class Display{
     JPanel panel; // the panel is not visible in output
     JPanel bigPanel;
@@ -14,11 +16,8 @@ public class Display{
     JLabel ans1;
     JLabel ans2;
     JFrame frame = new JFrame("Cheese Simulator.exe");
+    int sendCount=0;
     public Display(){
-
-    }
-    public void makeDisp(){
-        
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1000,700);
 
@@ -27,6 +26,14 @@ public class Display{
         label = new JLabel("Enter Text");
         textThing = new JTextField(10); // accepts upto 10 characters
         send = new JButton("Send");
+        send.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                System.out.println("poopydoodoo");
+                sendCount+=1;
+                sendClick();
+            }
+        });
         reset = new JButton("Reset");
         panel.add(label); // Components Added using Flow Layout
         panel.add(textThing);
@@ -63,7 +70,16 @@ public class Display{
         frame.getContentPane().add(BorderLayout.NORTH, bigPanel);
         frame.setVisible(true);
     }
-    public void sendText(){
-        //idk
+    public void sendClick(){
+        if(sendCount==1){
+            ans1.setText(textThing.getText());
+            textThing.setText("null");
+            frame.setVisible(true);
+        }
+        if(sendCount==2){
+            ans2.setText(textThing.getText());
+            textThing.setText("null");
+            frame.setVisible(true);
+        }
     }
 }

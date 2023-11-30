@@ -4,14 +4,10 @@ public class Test{
         TextReader reader = new TextReader();
         CheeseList cheeseList = new CheeseList();
         Display disp = new Display();
-        disp.makeDisp();
         while(true){
-        if(disp.send.getModel().isPressed()==true){
+            if(disp.sendCount==1){
                 cheeseList.userInput(disp.textThing.getText());
-                System.out.println("UWU");
-                //disp.ans1.setText(cheeseList.value(1).data);
-                //disp.frame.setVisible(true);
-                break;
-        }}
+            }
+        }
     }
 }
