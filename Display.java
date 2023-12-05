@@ -6,6 +6,7 @@ public class Display{
     public boolean clicked = false;
     JPanel panel; // the panel is not visible in output
     JPanel bigPanel;
+    JPanel oPanel;
     JLabel label;
     JTextField textThing; // accepts upto 10 characters
     JButton send;
@@ -24,7 +25,9 @@ public class Display{
 
         panel = new JPanel(); // the panel is not visible in output
         bigPanel = new JPanel();
-        bigPanel.setBounds(0, 0, 500, 500);
+        oPanel = new JPanel();
+        oPanel.setLocation(0, 100);
+
         label = new JLabel("Enter Text");
         textThing = new JTextField(10); // accepts upto 10 characters
         send = new JButton("Send");
@@ -42,7 +45,7 @@ public class Display{
        
 
         question1 = new JLabel("What would you like to search for?");
-        ans1 = new JTextField(100);
+        ans1 = new JTextField(10);
         question1.setBounds(0,0,100,50);
         ans1.setBounds(0,50,100,100);
         bigPanel.add(question1);
@@ -51,34 +54,19 @@ public class Display{
         frame.setVisible(true);
 
         question2 = new JLabel("What would you like to search for it in?");
-        ans2 = new JTextField(100);
+        ans2 = new JTextField(10);
         question2.setBounds(0,100,100,50);
         ans2.setBounds(0,200,100,50);
-        //frame.add(question2);
+        oPanel.add(question2);
         frame.setVisible(true);
-        //frame.add(ans2);
+        oPanel.add(ans2);
         frame.setVisible(true);
 
         
        
         frame.getContentPane().add(BorderLayout.SOUTH, panel);
-        frame.getContentPane().add(BorderLayout.NORTH, bigPanel);
+        frame.getContentPane().add(bigPanel);
+        frame.getContentPane().add(BorderLayout.CENTER, oPanel);
         frame.setVisible(true);
-    }
-    public int sendClick(){
-        System.out.println("HRERRDER");
-        if(sendCount==1){
-            ans1.setText(textThing.getText());
-            textThing.setText("");
-            frame.setVisible(true);
-            return(1);
-        }
-        if(sendCount==2){
-            ans2.setText(textThing.getText());
-            textThing.setText("");
-            frame.setVisible(true);
-            return(2);
-        }
-        return(-1);
     }
 }
