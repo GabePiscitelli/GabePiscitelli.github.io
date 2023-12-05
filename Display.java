@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 public class Display{
+    public boolean clicked = false;
     JPanel panel; // the panel is not visible in output
     JPanel bigPanel;
     JLabel label;
@@ -13,8 +14,8 @@ public class Display{
     JLabel question2;
     JLabel thing1;
     JLabel thing2;
-    JLabel ans1;
-    JLabel ans2;
+    JTextField ans1;
+    JTextField ans2;
     JFrame frame = new JFrame("Cheese Simulator.exe");
     int sendCount=0;
     public Display(){
@@ -23,15 +24,14 @@ public class Display{
 
         panel = new JPanel(); // the panel is not visible in output
         bigPanel = new JPanel();
+        bigPanel.setBounds(0, 0, 500, 500);
         label = new JLabel("Enter Text");
         textThing = new JTextField(10); // accepts upto 10 characters
         send = new JButton("Send");
         send.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e){
-                System.out.println("poopydoodoo");
-                sendCount+=1;
-                sendClick();
+                clicked = true;
             }
         });
         reset = new JButton("Reset");
@@ -42,44 +42,43 @@ public class Display{
        
 
         question1 = new JLabel("What would you like to search for?");
-        ans1 = new JLabel("");
+        ans1 = new JTextField(100);
         question1.setBounds(0,0,100,50);
-        ans1.setBounds(0,200,100,50);
+        ans1.setBounds(0,50,100,100);
         bigPanel.add(question1);
         frame.setVisible(true);
         bigPanel.add(ans1);
         frame.setVisible(true);
 
-        thing1 = new JLabel("");
-        thing2 = new JLabel("");
-        thing1.setBounds(0,0,500,50);
-        thing2.setBounds(0,300,500,50);
-        frame.getContentPane().add(thing1);
+        question2 = new JLabel("What would you like to search for it in?");
+        ans2 = new JTextField(100);
+        question2.setBounds(0,100,100,50);
+        ans2.setBounds(0,200,100,50);
+        //frame.add(question2);
         frame.setVisible(true);
-        frame.getContentPane().add(thing2);
+        //frame.add(ans2);
         frame.setVisible(true);
-        /* 
-        question1 = new JLabel("What would you like to search for?");
-        question2 = new JLabel("What would you like to search for it in?"); 
-        question1.setBounds(0,0,500,50);
-        question2.setBounds(0,60,50,50);
-        frame.getContentPane().add(question1);
-        frame.getContentPane().add(question2);
-        */
+
+        
+       
         frame.getContentPane().add(BorderLayout.SOUTH, panel);
         frame.getContentPane().add(BorderLayout.NORTH, bigPanel);
         frame.setVisible(true);
     }
-    public void sendClick(){
+    public int sendClick(){
+        System.out.println("HRERRDER");
         if(sendCount==1){
             ans1.setText(textThing.getText());
-            textThing.setText("null");
+            textThing.setText("");
             frame.setVisible(true);
+            return(1);
         }
         if(sendCount==2){
             ans2.setText(textThing.getText());
-            textThing.setText("null");
+            textThing.setText("");
             frame.setVisible(true);
+            return(2);
         }
+        return(-1);
     }
 }
