@@ -74,7 +74,7 @@ public class Display{
         String fInp = reader.format(ans2.getText());
         cheeseList.userInput(ans1.getText());
         int val = reader.search(cheeseList.value(1).data, fInp);
-        System.out.println(val);
+        //System.out.println(val);
         String v = Integer.toString(val);
         label.setText(v);
         cheeseList.delete(1);

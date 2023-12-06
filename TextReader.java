@@ -23,18 +23,28 @@ public class TextReader implements TextReaderInterface{
         appears in the text.
         */
         int wordCount = 0;
-        String[] wordToCheck = new String[word.length()];
-        int wordIndex = 0;
+        Stack oStack = new Stack("");
+        Stack nStack = new Stack("");
+        String wordToCheck = new StringBuilder(word).reverse().toString();
+        int len = wordToCheck.length();
+        int ind = 0;
+
+
+
+        //String[] wordToCheck = new String[word.length()];
         for(int i=0; i<word.length(); i++){
-            wordToCheck[i] = word.substring(i,i+1);
+            oStack.push(wordToCheck.substring(i,i+1));
         }
+        nStack = oStack;
+        
         for(int i=0; i<formattedInput.length(); i++){
-            if(formattedInput.substring(i,i+1).equals(wordToCheck[wordIndex])){
-                if(wordIndex == wordToCheck.length-1){
+            if(formattedInput.substring(i,i+1).equals(nStack.peek())){
+                if(ind == len){
                     wordCount++;
-                    wordIndex=0;
+                    ind = 0;
+                    nStack = oStack;
                 }
-                wordIndex++;
+                ind++;
             }
         }
         return(wordCount);
