@@ -27,7 +27,7 @@ public class TextReader implements TextReaderInterface{
         Stack nStack = new Stack("");
         String wordToCheck = new StringBuilder(word).reverse().toString();
         int len = wordToCheck.length();
-        int ind = 0;
+        int ind = 1;
 
 
 
@@ -38,10 +38,10 @@ public class TextReader implements TextReaderInterface{
         nStack = oStack;
         
         for(int i=0; i<formattedInput.length(); i++){
-            if(formattedInput.substring(i,i+1).equals(nStack.peek())){
+            if(formattedInput.substring(i,i+1).equals(nStack.pop())){
                 if(ind == len){
                     wordCount++;
-                    ind = 0;
+                    ind = 1;
                     nStack = oStack;
                 }
                 ind++;
