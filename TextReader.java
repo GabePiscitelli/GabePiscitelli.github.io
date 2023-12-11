@@ -38,7 +38,8 @@ public class TextReader implements TextReaderInterface{
         nStack = oStack;
         
         for(int i=0; i<formattedInput.length(); i++){
-            if(formattedInput.substring(i,i+1).equals(nStack.pop())){
+            if(formattedInput.substring(i,i+1).equals(nStack.peek())){
+                nStack.pop();
                 if(ind == len){
                     wordCount++;
                     ind = 1;

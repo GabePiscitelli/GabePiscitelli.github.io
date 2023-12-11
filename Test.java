@@ -1,5 +1,6 @@
 public class Test{
+    static Display disp;
     public static void main(String args[]){
-        Display disp = new Display();  
+        disp = new Display();  
     }
 }

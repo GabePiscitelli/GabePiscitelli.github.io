@@ -3,6 +3,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 public class Display{
+    ImageState imgs;
+    //imageIcon imgTest;
     TextReader reader = new TextReader();
     CheeseList cheeseList = new CheeseList();
     public boolean clicked = false;
@@ -12,21 +14,27 @@ public class Display{
     JLabel label;
     JTextField textThing; // accepts upto 10 characters
     JButton send;
-    JButton reset;
+    JButton monkey;
+    JButton lowtier;
+    JPanel imgPan;
     JLabel question1;
     JLabel question2;
     JLabel thing1;
     JLabel thing2;
     JTextField ans1;
+    boolean displayImg;
     JTextField ans2;
     JFrame frame = new JFrame("Cheese Simulator.exe");
     int sendCount=0;
     public Display(){
+        imgs = new ImageState();
+        displayImg = false;
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(1000,700);
-
+        
         panel = new JPanel(); // the panel is not visible in output
         bigPanel = new JPanel();
+        imgPan = new JPanel();
         oPanel = new JPanel();
         //oPanel.setLocation(0, 100);
 
@@ -37,9 +45,27 @@ public class Display{
                 click();
             }
         });
+
+        monkey = new JButton("Display Image");
+        monkey.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                imgs.dispImg("monkey");
+            }
+        });
+
+        lowtier = new JButton("Display Low Tier God");
+        lowtier.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e){
+                imgs.dispImg("lowtier");
+            }
+        });
         
         
         panel.add(send);
+        panel.add(monkey);
+        panel.add(lowtier);
         
        
         label = new JLabel("");
@@ -62,13 +88,16 @@ public class Display{
         oPanel.add(ans2);
         frame.setVisible(true);
 
-        
+        //imgTest = new imageIcon();
        
         frame.getContentPane().add(BorderLayout.SOUTH, panel);
         frame.getContentPane().add(bigPanel, BorderLayout.NORTH);
         frame.getContentPane().add(BorderLayout.CENTER, oPanel);
+        frame.getContentPane().add(BorderLayout.EAST, imgPan);
+
         frame.setVisible(true);
     }
+    
 
     public void click(){
         String fInp = reader.format(ans2.getText());
@@ -78,5 +107,6 @@ public class Display{
         String v = Integer.toString(val);
         label.setText(v);
         cheeseList.delete(1);
+        
     }
 }
